@@ -1,0 +1,179 @@
+/* --- Reset & base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: #1e293b;
+  background: linear-gradient(160deg, #f1f5f9 0%, #e2e8f0 100%);
+  min-height: 100vh;
+}
+
+/* --- Layout --- */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.main {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Loader --- */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.loader__spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0d9488;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.loader__text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Quote block --- */
+.quoteBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quoteBlock__title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 1.85rem);
+  font-weight: 600;
+  color: #0f766e;
+  margin: 0 0 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Quote card --- */
+.quoteCard {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 2rem 2rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(30, 41, 59, 0.06),
+    0 1px 3px rgba(30, 41, 59, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  margin-bottom: 1.75rem;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.quoteCard--fade {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+.quoteCard__mark {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: rgba(13, 148, 136, 0.15);
+  user-select: none;
+}
+.quoteCard__copyBtn {
+  position: absolute;
+  right: 1rem;
+  background-color: transparent;
+  border: 0px;
+  top: 0.6rem;
+  cursor: pointer;
+  transform: rotate(90deg);
+  color: rgba(13, 148, 136, 0.6);
+}
+.quoteCard__tootip {
+  position: absolute;
+  right: -0.5rem;
+  background: #464444;
+  font-size: 0.7rem;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 5px;
+  top: 2.2rem;
+  transition: all 0.5 ease-out;
+}
+.quoteCard__text {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.9;
+  color: #334155;
+  margin: 0.5rem 0 1.25rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteCard__author {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  font-style: normal;
+}
+
+.quoteCard__author cite {
+  font-style: normal;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .quoteCard {
+    padding: 1.5rem 1.25rem 1.35rem;
+  }
+
+  .quoteCard__mark {
+    font-size: 2.75rem;
+    left: 1rem;
+    top: 0.5rem;
+  }
+}

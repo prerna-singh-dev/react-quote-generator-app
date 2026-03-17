@@ -1,0 +1,72 @@
+.quoteForm {
+  background: white;
+  margin: 2rem 0;
+  max-width: 640px;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+fieldset {
+  border: 0px;
+  text-align: center;
+}
+.formBlock {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+  text-align: left;
+}
+label {
+  flex: 1;
+}
+textarea,
+input {
+  border-color: #e5e5e5;
+}
+textarea {
+  max-width: 64%;
+  width: 100%;
+  min-height: 12vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+  resize: none;
+}
+
+.previewBlock {
+  height: 50vh;
+  width: 90%;
+  border: 3px dashed #e5e5e5;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.previewBlock p {
+  color: #bebdbd;
+  font-size: 14px;
+  font-weight: 500;
+}
+.generateQuote {
+  position: relative;
+}
+.generateQuote img {
+  width: 340px;
+  height: 340px;
+}
+.generateQuote .quoteOnImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quoteOnImage q {
+  padding: 0px 1rem;
+}
