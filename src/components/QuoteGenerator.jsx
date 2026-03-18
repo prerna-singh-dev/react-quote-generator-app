@@ -3,7 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 import Button from "./Button";
 
 function QuoteGenerator() {
-  const url = "https://dummyjson.com/quotes";
+  const url = "https://dummyjson.com/quotes?limit=500";
   const [{ data, loading }] = useFetch(url);
   const [quote, setQuote] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -64,7 +64,7 @@ function QuoteGenerator() {
               onClick={handleCopy}
               title="Copy"
               aria-label="
-                Copy Quote"
+                Copy Quote Text"
             >
               <svg
                 width="18"
@@ -78,14 +78,18 @@ function QuoteGenerator() {
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
             </button>
-            {copied && <span className="quoteCard__tootip">Copied!</span>}
+            {copied && (
+              <span className="quoteCard__tootip" aria-live="polite">
+                Quote Copied!
+              </span>
+            )}
             <p className="quoteCard__text">{quote.quote}</p>
             <footer className="quoteCard__author">
               <cite>— {quote.author}</cite>
             </footer>
           </blockquote>
 
-          <Button handleClick={generateQuote}>New Quote</Button>
+          <Button handleClick={generateQuote}>Refresh Quote</Button>
         </div>
       )}
     </>

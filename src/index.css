@@ -16,7 +16,22 @@ body {
   padding: 0;
   font-family: "Source Sans 3", system-ui, sans-serif;
   color: #1e293b;
-  background: linear-gradient(160deg, #f1f5f9 0%, #e2e8f0 100%);
+  background: radial-gradient(
+      1200px 700px at 15% 10%,
+      rgba(20, 184, 166, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 600px at 90% 15%,
+      rgba(99, 102, 241, 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 50% 100%,
+      rgba(14, 165, 233, 0.1),
+      transparent 55%
+    ),
+    linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
   min-height: 100vh;
 }
 
@@ -27,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 1.5rem;
 }
 
@@ -94,9 +110,8 @@ body {
   background: #fff;
   padding: 2rem 2rem 1.75rem;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(30, 41, 59, 0.06),
-    0 1px 3px rgba(30, 41, 59, 0.04);
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.08), 0 1px 3px rgba(2, 6, 23, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.32);
   margin-bottom: 1.75rem;
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
@@ -124,18 +139,34 @@ body {
   top: 0.6rem;
   cursor: pointer;
   transform: rotate(90deg);
-  color: rgba(13, 148, 136, 0.6);
+  color: rgba(13, 148, 136, 0.65);
+  padding: 0.35rem 0.4rem;
+  border-radius: 10px;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.quoteCard__copyBtn:hover {
+  background-color: rgba(13, 148, 136, 0.1);
+  color: rgba(13, 148, 136, 0.92);
+  transform: rotate(90deg) translateY(-1px);
+}
+
+.quoteCard__copyBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.18);
 }
 .quoteCard__tootip {
   position: absolute;
-  right: -0.5rem;
-  background: #464444;
-  font-size: 0.7rem;
+  right: -2.5rem;
+  background: rgba(15, 23, 42, 0.92);
+  font-size: 0.72rem;
   color: white;
-  padding: 2px 6px;
-  border-radius: 5px;
-  top: 2.2rem;
-  transition: all 0.5 ease-out;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  top: 3rem;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.22);
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 .quoteCard__text {
   font-family: "Playfair Display", Georgia, serif;

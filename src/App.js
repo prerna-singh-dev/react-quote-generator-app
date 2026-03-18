@@ -6,8 +6,8 @@ function App() {
     <div className="container">
       <div className="main">
         <QuoteGenerator />
-        <AddQuote />
       </div>
+      <AddQuote />
     </div>
   );
 }
